@@ -19,10 +19,26 @@
                     </ul>
               </div>
             </div>
+             <!-- Menus List -->
+
+<!-- Search bar -->
+<fieldset class="searchbar">
+    <div class="mb-3 row">
+      <!-- <label for="typeahead-http" class="col-xs-3 col-sm-auto col-form-label">Search...</label> -->
+      <div class="col">
+          <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find..." />
+        <small *ngIf="searching" class="form-text text-muted">searching...</small>
+        <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+      </div>
+    </div>
+  </fieldset>
+<!-- Search bar -->
+
+<!-- User drop down btn -->
             <div class="btn-group">
-                
+
                     <span class="usericon"><i class="bi bi-person-circle"></i></span>
-                    <span class="textnone">Jassa</span>
+                    <span class="textnone">Elon Musk</span>
 
                 <div ngbDropdown ngbDropdownToggle class="dropdown">
                 <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
@@ -34,6 +50,8 @@
                 </ul>
                 </div>
             </div>
+            <!-- User drop down btn -->
+            
         </div>
     </nav>
   </div>
