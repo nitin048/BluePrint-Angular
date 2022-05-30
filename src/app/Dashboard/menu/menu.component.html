@@ -20,18 +20,23 @@
               </div>
             </div>
             <div class="btn-group">
-                <a href="#" class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+                
                     <span class="usericon"><i class="bi bi-person-circle"></i></span>
                     <span class="textnone">Jassa</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><button class="dropdown-item" type="button"><i class="bi bi-lock-fill"></i> Change Password</button></li>
-                    <li><button class="dropdown-item" type="button"><i class="bi bi-gear-fill"></i> Admin Setion</button></li>
-                    <li><button class="dropdown-item" type="button"><i class="bi bi-gear-wide-connected"></i> IMAP Settings</button></li>
+
+                <div ngbDropdown ngbDropdownToggle class="dropdown">
+                <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-lock-fill"></i> Change Password</button></li>
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-fill"></i> Admin Setion</button></li>
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-wide-connected"></i> IMAP Settings</button></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><button class="dropdown-item" type="button"><i class="bi bi-box-arrow-right"></i> Sign out</button></li>
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-box-arrow-right"></i> Sign out</button></li>
                 </ul>
+                </div>
             </div>
         </div>
     </nav>
   </div>
+
+
+

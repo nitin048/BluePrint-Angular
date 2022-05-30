@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+declare const myFunction:any;
+
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -7,8 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
-
+  // constructor() { }
   ngOnInit(): void {
   }
 
