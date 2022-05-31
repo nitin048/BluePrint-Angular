@@ -24,10 +24,12 @@
 <!-- Search bar -->
 <fieldset class="searchbar">
     <div class="mb-3 row">
-      <div class="col">
-          <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find..." />
+      <!-- <div class="form" _ngcontent-jer-c108> -->
+        <div class="form" _ngcontent-jer-c108 >
+        <span class="left-pan"><i class="bi bi-mic"></i></span>
+          <input id="typeahead-http" type="text" class="form-control form-input" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find..." />
         <small *ngIf="searching" class="form-text text-muted">searching...</small>
-      
+        
         <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
       </div>
 
@@ -89,6 +91,29 @@
                 </div>
             </div>
             <!-- User drop down btn -->
+
+
+<!-- test search bar -->
+
+
+<!-- <div class="row height d-flex justify-content-center align-items-center"> -->
+
+  <!-- <div class="col-md-6">
+
+    <div class="form" _ngcontent-jer-c108>
+      <input type="text" class="form-control form-input" placeholder="Search anything...">
+      <span class="left-pan"><i class="bi bi-mic"></i></span>
+    </div>
+    
+  </div> -->
+  <!-- </div> -->
+
+
+<!-- test search bar -->
+
+
+
+
 
         </div>
     </nav>
