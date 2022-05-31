@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './Dashboard/menu/menu.component';
 import { ContainerComponent } from './Dashboard/container/container.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbdCarouselConfig } from './Dashboard/carousel-config/carousel-config.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //---------  Important
 
@@ -23,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgbModule,BrowserModule, FormsModule, HttpClientModule, NgbModule
+    NgbModule,BrowserModule, FormsModule, HttpClientModule, NgbModule, BrowserAnimationsModule, FontAwesomeModule
   ],
   exports: [MenuComponent],
   providers: [],
