@@ -10,6 +10,7 @@ import { MenuComponent } from './Dashboard/menu/menu.component';
 import { ContainerComponent } from './Dashboard/container/container.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,BrowserModule, FormsModule, HttpClientModule, NgbModule, BrowserAnimationsModule
+    NgbModule,BrowserModule, FormsModule, HttpClientModule, NgbModule, BrowserAnimationsModule, FontAwesomeModule
   ],
   exports: [MenuComponent],
   providers: [],

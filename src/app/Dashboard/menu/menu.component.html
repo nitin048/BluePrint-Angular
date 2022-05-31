@@ -1,5 +1,5 @@
 <div class="sidebar-nav">
-    <nav class="navbar navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-dark bg-secondary fixed-top">
         <div class="container">
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -24,34 +24,43 @@
 <!-- Search bar -->
 <fieldset class="searchbar">
     <div class="mb-3 row">
-      <!-- <label for="typeahead-http" class="col-xs-3 col-sm-auto col-form-label">Search...</label> -->
       <div class="col">
           <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find..." />
         <small *ngIf="searching" class="form-text text-muted">searching...</small>
         <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
       </div>
+
     </div>
+   
   </fieldset>
 <!-- Search bar -->
+       
+           <!-- Mic for speech to text -->
+           <div class="Mic-Btn">
+            <a>
+              <i class="bi bi-mic"></i>
+            </a>
+          </div>
+          <!-- Mic for speech to text -->
 
 <!-- User drop down btn -->
             <div class="btn-group">
 
                     <span class="usericon"><i class="bi bi-person-circle"></i></span>
-                    <span class="textnone">Elon Musk</span>
+                   <span class="textnone">Elon Musk</span>
 
                 <div ngbDropdown ngbDropdownToggle class="dropdown">
                 <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-lock-fill"></i> Change Password</button></li>
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-fill"></i> Admin Setion</button></li>
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-wide-connected"></i> IMAP Settings</button></li>
-                    <li><hr class="dropdown-divider"></li>
+      <li><hr class="dropdown-divider"></li>
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-box-arrow-right"></i> Sign out</button></li>
                 </ul>
                 </div>
             </div>
             <!-- User drop down btn -->
-            
+
         </div>
     </nav>
   </div>

@@ -30,9 +30,16 @@
 {
     margin-right: 5px;
 }
-.searchbar{
+.searchbar
+{
     padding-top:20px;
 }
 
+.Mic-Btn
+{
     
-
+    position:relative;
+    right:-1px;
+    top: 3px;
+   
+}
