@@ -26,8 +26,38 @@
     <div class="mb-3 row">
       <!-- <div class="form" _ngcontent-jer-c108> -->
         <div class="form" _ngcontent-jer-c108 >
-        <span class="left-pan"><i class="bi bi-mic"></i></span>
-          <input id="typeahead-http" type="text" class="form-control form-input" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find..." />
+          
+          <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+            <div type="button" (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
+          </div>
+          <ng-template #voicesection>
+            <ng-container *ngIf="!voiceActiveSectionError; else failure">
+              <ng-container *ngIf="voiceText; else start">
+                  <!-- <span>{{voiceText}}</span> -->
+              </ng-container>
+              <ng-template #start>
+                <ng-container
+                  *ngIf="voiceActiveSectionListening; else beginning">
+                  <span>Listening...</span>
+                </ng-container>
+                <ng-template #beginning>
+                  <span>Start talking...</span>
+                </ng-template>
+              </ng-template>
+            </ng-container>
+            <ng-template #failure>
+              <span>Didn't catch that</span>
+            </ng-template>
+            <div>
+              <!-- <button (click)="closeVoiceRecognition()">Close</button> -->
+              <div (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
+            </div>
+          </ng-template>
+
+
+
+<!-- <span class="left-pan"><i class="bi bi-mic"></i></span> -->
+          <input id="typeahead-http" type="text" class="form-control form-input" [class.is-invalid]="searchFailed" [(ngModel)]="voiceText" [ngbTypeahead]="search" placeholder="Find..." />
         <small *ngIf="searching" class="form-text text-muted">searching...</small>
         
         <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
@@ -39,8 +69,8 @@
 
        <!-- Mic for speech to text -->
 
-       <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
-        <button type="button" (click)="startVoiceRecognition()">Record</button>
+       <!-- <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+        <div type="button" (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
       </div>
       <ng-template #voicesection>
         <ng-container *ngIf="!voiceActiveSectionError; else failure">
@@ -60,11 +90,11 @@
         <ng-template #failure>
           <span>Didn't catch that</span>
         </ng-template>
-        <div>
-          <button (click)="closeVoiceRecognition()">Close</button>
-          <button (click)="startVoiceRecognition()">Restart</button>
+        <div> -->
+          <!-- <button (click)="closeVoiceRecognition()">Close</button> -->
+          <!-- <div (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
         </div>
-      </ng-template>
+      </ng-template> -->
 
 <!-- Mic for speech to text-->
 
