@@ -1,0 +1,98 @@
+<div class="sidebar-nav">
+    <nav class="navbar navbar-dark bg-secondary fixed-top">
+        <div class="container">
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menus List -->
+            <div class="offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li><a href="#"><i class="bi bi-calendar3"></i> <span class="item-text">Calendar</span></a></li>
+                        <li><a href="#"><i class="bi bi-pencil-square"></i> <span class="item-text">Applications</span></a></li>
+                        <li><a href="#"><i class="bi bi-people"></i> <span class="item-text">Audience</span></a></li>
+                        <li><a href="#"><i class="bi bi-book"></i> <span class="item-text">Books World</span></a></li>
+                        <li><a href="#"><i class="bi bi-person-check"></i> <span class="item-text">Candidates</span></a></li>
+                        <li><a href="#"><i class="bi bi-envelope"></i> <span class="item-text">Email</span></a></li>
+                        <li><a href="#"><i class="bi bi-graph-up"></i> <span class="item-text">Analytics</span></a></li>
+                    </ul>
+              </div>
+            </div>
+             <!-- Menus List -->
+
+<!-- Search bar -->
+<fieldset class="searchbar">
+    <div class="mb-3 row">
+      <div class="col">
+          <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find..." />
+        <small *ngIf="searching" class="form-text text-muted">searching...</small>
+      
+        <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+      </div>
+
+           <!-- Mic for speech to text -->
+           <!-- <div class="Mic-Btn">
+            <a>
+              <i class="bi bi-mic"></i>
+            </a>
+          </div> -->
+          <!-- Mic for speech to text -->
+
+    </div>
+   
+  </fieldset>
+<!-- Search bar -->
+       <!-- mic test -->
+       <!-- <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+        <button type="button" (click)="startVoiceRecognition()">Record</button>
+      </div>
+      <ng-template #voicesection>
+        <ng-container *ngIf="!voiceActiveSectionError; else failure">
+          <ng-container *ngIf="voiceText; else start">
+              <span>{{voiceText}}</span>
+          </ng-container>
+          <ng-template #start>
+            <ng-container
+              *ngIf="voiceActiveSectionListening; else beginning">
+              <span>Listening...</span>
+            </ng-container>
+            <ng-template #beginning>
+              <span>Start talking...</span>
+            </ng-template>
+          </ng-template>
+        </ng-container>
+        <ng-template #failure>
+          <span>Didn't catch that</span>
+        </ng-template>
+        <div>
+          <button (click)="closeVoiceRecognition()">Close</button>
+          <button (click)="startVoiceRecognition()">Restart</button>
+        </div>
+      </ng-template> -->
+<!-- mic test -->
+
+<!-- User drop down btn -->
+            <div class="btn-group">
+
+                    <span class="usericon"><i class="bi bi-person-circle"></i></span>
+                   <span class="textnone">Elon Musk</span>
+
+                <div ngbDropdown ngbDropdownToggle class="dropdown">
+                <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-lock-fill"></i> Change Password</button></li>
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-fill"></i> Admin Setion</button></li>
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-wide-connected"></i> IMAP Settings</button></li>
+      <li><hr class="dropdown-divider"></li>
+                    <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-box-arrow-right"></i> Sign out</button></li>
+                </ul>
+                </div>
+            </div>
+            <!-- User drop down btn -->
+
+        </div>
+    </nav>
+  </div>
+
+
+
