@@ -30,9 +30,9 @@ export class WikipediaService {
 }
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
   providers: [WikipediaService],
   styles: [`.form-control { width: 300px; }`]
 })
