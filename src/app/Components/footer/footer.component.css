@@ -1,7 +1,5 @@
 .container-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    margin-top: auto;
     width: 100%;
     background-color: red;
     color: white;
