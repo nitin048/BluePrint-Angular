@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable, of, OperatorFunction} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, map, tap, switchMap} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 // ----const variable for text to speech lib----//
 
@@ -137,6 +138,12 @@ constructor(private _service: WikipediaService , private ngZone: NgZone)  {}
   model: any;
   searching = false;
   searchFailed = false;
+
+   
+  clear(input: HTMLInputElement)
+  {
+    input.value = '';
+  }
 
   search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
     text$.pipe(
