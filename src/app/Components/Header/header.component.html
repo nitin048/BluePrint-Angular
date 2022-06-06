@@ -24,28 +24,87 @@
 <!-- Search bar -->
 <fieldset class="searchbar">
     <div class="mb-3 row">
-      <div class="col">
-          <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find..." />
+      <!-- <div class="form" _ngcontent-jer-c108> -->
+        <div class="form" _ngcontent-jer-c108 >
+          
+          <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+            <div type="button" (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
+          </div>
+          <ng-template #voicesection>
+            <ng-container *ngIf="!voiceActiveSectionError; else failure">
+              <ng-container *ngIf="voiceText; else start">
+                  <!-- <span>{{voiceText}}</span> -->
+                  
+              </ng-container>
+              <ng-template #start>
+                <ng-container
+                  *ngIf="voiceActiveSectionListening; else beginning">
+                  <span>Listening...</span>
+                </ng-container>
+                <ng-template #beginning>
+                  <span>Start talking...</span>
+                </ng-template>
+              </ng-template>
+            </ng-container>
+            <ng-template #failure>
+              <span>Didn't catch that</span>
+            </ng-template>
+            <div>
+              <!-- <button (keyup)="closeVoiceRecognition()">Close</button> -->
+              <div (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
+            </div>
+          </ng-template>
+
+
+
+<!-- <span class="left-pan"><i class="bi bi-mic"></i></span> -->
+
+          <!-- <input id="typeahead-http" (click)="closeVoiceRecognition()"   #myinput  type="text"  class="form-control form-input" [class.is-invalid]="searchFailed" [(ngModel)]="voiceText" [ngbTypeahead]="search" placeholder="Find..." />
+          
+  
+
+          <div (click)="clear(myinput)">X</div> -->
+
+
+
+
+
+          <!-- <mat-form-field class="example-form-field"> -->
+            <!-- <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value"> -->
+            <input matInput type="text" id="typeahead-http" (click)="closeVoiceRecognition()"  type="text"  class="form-control form-input" [class.is-invalid]="searchFailed" 
+            [(ngModel)]="value" [(ngModel)]="voiceText" [ngbTypeahead]="search" placeholder="Find..." />
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          <!-- </mat-form-field> -->
+
+
+
+
+
+
+
+
+
+        
         <small *ngIf="searching" class="form-text text-muted">searching...</small>
-      
         <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
       </div>
-
-           <!-- Mic for speech to text -->
-           <!-- <div class="Mic-Btn">
-            <a>
-              <i class="bi bi-mic"></i>
-            </a>
-          </div> -->
-          <!-- Mic for speech to text -->
-
     </div>
-   
   </fieldset>
+
+
+
+
+
+
 <!-- Search bar -->
-       <!-- mic test -->
+
+
+       <!-- Mic for speech to text -->
+
        <!-- <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
-        <button type="button" (click)="startVoiceRecognition()">Record</button>
+        <div type="button" (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
       </div>
       <ng-template #voicesection>
         <ng-container *ngIf="!voiceActiveSectionError; else failure">
@@ -65,29 +124,31 @@
         <ng-template #failure>
           <span>Didn't catch that</span>
         </ng-template>
-        <div>
-          <button (click)="closeVoiceRecognition()">Close</button>
-          <button (click)="startVoiceRecognition()">Restart</button>
+        <div> -->
+          <!-- <button (click)="closeVoiceRecognition()">Close</button> -->
+          <!-- <div (click)="startVoiceRecognition()"><i class="bi bi-mic"></i></div>
         </div>
       </ng-template> -->
-<!-- mic test -->
+
+<!-- Mic for speech to text-->
+
 
 <!-- User drop down btn -->
-            <div class="btn-group">
 
+            <div class="btn-group">
                     <span class="usericon"><i class="bi bi-person-circle"></i></span>
                    <span class="textnone">Elon Musk</span>
-
                 <div ngbDropdown ngbDropdownToggle class="dropdown">
                 <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-lock-fill"></i> Change Password</button></li>
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-fill"></i> Admin Setion</button></li>
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-gear-wide-connected"></i> IMAP Settings</button></li>
-      <li><hr class="dropdown-divider"></li>
+                    <li><hr class="dropdown-divider"></li>
                     <li><button ngbDropdownItem class="dropdown-item" type="button"><i class="bi bi-box-arrow-right"></i> Sign out</button></li>
                 </ul>
                 </div>
             </div>
+
             <!-- User drop down btn -->
 
         </div>
