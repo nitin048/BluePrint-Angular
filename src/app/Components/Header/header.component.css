@@ -36,7 +36,7 @@
 }
 
 
-/* Mic css */
+
 .form{
 
     position: relative;
@@ -45,38 +45,29 @@
 .form span{
 
      position: absolute; 
-/* right: 17px; */
 top: 13px; 
 padding: 2px;
-/* border-left: 1px solid #d1d5db; */
 
 }
-
-/* .left-pan{
-    padding-left: 7px;
-} */
 
 .left-pan i{
    
    padding-left: 255px;
 }
 
-/* .form-input{
-
-    height: 55px;
-    text-indent: 33px;
-    border-radius: 10px;
-} */
-
-/* .form-input:focus{
-
-    box-shadow: none;
-    border:none;
-} */
-
 .bi
 {
     font-size: large;
 
 }
-/* mic css */
+
+.form-control
+{
+    height: 33px;
+    border-radius :22px
+}
+.speech{
+    left:100px;
+    padding-top:20px !important;
+
+}
