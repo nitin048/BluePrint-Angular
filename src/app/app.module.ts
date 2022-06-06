@@ -12,6 +12,7 @@ import { NgbdCarouselConfig } from './Components/carousel-config/carousel-config
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './Components/footer/footer.component'; //---------  Important
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MenuComponent,
     ContainerComponent,
     NgbdCarouselConfig,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
