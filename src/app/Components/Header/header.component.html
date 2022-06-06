@@ -59,17 +59,45 @@
 
 <!-- <span class="left-pan"><i class="bi bi-mic"></i></span> -->
 
-          <input id="typeahead-http" (click)="closeVoiceRecognition()"   #myinput  type="text"  class="form-control form-input" [class.is-invalid]="searchFailed" [(ngModel)]="voiceText" [ngbTypeahead]="search" placeholder="Find..." />
+          <!-- <input id="typeahead-http" (click)="closeVoiceRecognition()"   #myinput  type="text"  class="form-control form-input" [class.is-invalid]="searchFailed" [(ngModel)]="voiceText" [ngbTypeahead]="search" placeholder="Find..." />
           
   
 
-          <div (click)="clear(myinput)">X</div>
+          <div (click)="clear(myinput)">X</div> -->
+
+
+
+
+
+          <!-- <mat-form-field class="example-form-field"> -->
+            <!-- <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value"> -->
+            <input matInput type="text" id="typeahead-http" (click)="closeVoiceRecognition()"  type="text"  class="form-control form-input" [class.is-invalid]="searchFailed" 
+            [(ngModel)]="value" [(ngModel)]="voiceText" [ngbTypeahead]="search" placeholder="Find..." />
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          <!-- </mat-form-field> -->
+
+
+
+
+
+
+
+
+
         
         <small *ngIf="searching" class="form-text text-muted">searching...</small>
         <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
       </div>
     </div>
   </fieldset>
+
+
+
+
+
+
 <!-- Search bar -->
 
 

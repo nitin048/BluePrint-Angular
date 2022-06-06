@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import{MaterialModule } from './material-module'
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './Components/Header/header.component';
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FooterComponent
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

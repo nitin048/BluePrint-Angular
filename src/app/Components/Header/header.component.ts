@@ -50,6 +50,7 @@ export class WikipediaService {
 
 export class MenuComponent implements OnInit {
 
+value = '';
 
 constructor(private _service: WikipediaService , private ngZone: NgZone)  {}
 
